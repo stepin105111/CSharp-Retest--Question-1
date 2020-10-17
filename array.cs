@@ -1,40 +1,34 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-class ArrayExample
+namespace Array
 {
-    static void DisplayArray(string[] arr) => Console.WriteLine(string.Join(" ", arr));
-
-    // Change the array by reversing its elements.
-    static void ChangeArray(string[] arr) => Array.Reverse(arr);
-
-    static void ChangeArrayElements(string[] arr)
+    class Program
     {
-        // Change the value of the first three array elements.
-        arr[0] = "Mon";
-        arr[1] = "Wed";
-        arr[2] = "Fri";
-    }
-
-    static void Main()
-    {
-        // Declare and initialize an array.
-        string[] weekDays = { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
-        // Display the array elements.
-        Console.WriteLine("Before");
-        DisplayArray(weekDays);
-        Console.WriteLine();
-
-        // Reverse the array.
-        ChangeArray(weekDays);
-        // Display the array again to verify that it stays reversed.
-        Console.WriteLine("After:");
-        DisplayArray(weekDays);
-        Console.WriteLine();
-
-        //// Assign new values to individual array elements.
-        //ChangeArrayElements(weekDays);
-        //// Display the array again to verify that it has changed.
-        //Console.WriteLine("Array weekDays after the call to ChangeArrayElements:");
-        //DisplayArray(weekDays);
+        static void DiaplayArray(string arr)
+        {
+            Console.Write("Forward String: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine();
+            Console.Write("Backward String: ");
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                Console.Write(arr[i]);
+            }
+            Console.WriteLine();
+        }
+        static void Main(string[] args)
+        {
+            string str;
+            Console.WriteLine("Enter the String");
+            str = Console.ReadLine();
+            DiaplayArray(str);
+        }
     }
 }
